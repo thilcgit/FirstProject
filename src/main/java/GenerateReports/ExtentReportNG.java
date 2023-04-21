@@ -6,7 +6,8 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class ExtentReportNG {
 
     public static ExtentReports getReportObject(){
-
+        System.out.println("----------------changes made1--------------------------");
+        System.out.println("----------------changes made2--------------------------");
         String reportPath=System.getProperty("user.dir")+"\\Reports\\index.html";
         ExtentSparkReporter sparkReporter=new ExtentSparkReporter(reportPath);
         sparkReporter.config().setReportName("Thilini Test Results");
@@ -16,6 +17,7 @@ public class ExtentReportNG {
         extentReports.attachReporter(sparkReporter);
         extentReports.setSystemInfo("Tester","Thilini");
         return extentReports;
+
 
     }
     }

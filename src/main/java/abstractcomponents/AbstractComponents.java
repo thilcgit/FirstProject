@@ -2,6 +2,7 @@ package abstractcomponents;
 
 import Page.OrderPage;
 import Page.ShoppingCartPage;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,10 +18,13 @@ public class AbstractComponents {
 
     WebDriver driver;
 
+
     public AbstractComponents(WebDriver driver) {
+        System.out.println("------------------------");
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
+
     @FindBy(css="button[routerlink*='cart']")
     WebElement viewCart;
 
@@ -35,7 +39,6 @@ public class AbstractComponents {
         WebDriverWait wWait=new WebDriverWait(driver,Duration.ofSeconds(10));
         wWait.until(ExpectedConditions.visibilityOf(findBy));
     }
-
 
 
     public void waitForElementDisappear(WebElement webE){
@@ -64,5 +67,13 @@ public class AbstractComponents {
         return orderHistory;
 
     }
+
+    public OrderPage goToOrdersPage1() {
+
+        orders.click();
+        OrderPage orderHistory = new OrderPage(driver);
+        return orderHistory;
+    }
+
 
 }
