@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="All Test Suite">
+    <groups>
+        <run>
+            <include name="Purchase"/>
+        </run>
+    </groups>
+    <test verbose="2" preserve-order="true" name="Error Validation Test">
+        <classes>
+            <class name="tester.tests.testcomponents.ErrorValidationsTest">
+                <methods>
+                    <include name="loginErrorTest"/>
+                    <include name="submitOrderErrorTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+            
+    <test name="Submit Order Test">
+        <classes>
+            <class name="tester.tests.testcomponents.SubmitOrderTest">
+                <methods>
+                    <include name="submitOrderTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
