@@ -25,6 +25,8 @@ public class CheckOutPage extends AbstractComponents {
 
     @FindBy(css=".action__submit")
     WebElement placeOrder;
+    @FindBy(css=".action__submit")
+    WebElement placeOrder1;
 
     public void placeOrder(String countrySelected){
 
@@ -35,5 +37,12 @@ public class CheckOutPage extends AbstractComponents {
     public ConfirmationPage submitOrder(){
         clickWebElements(placeOrder);
         return new ConfirmationPage(driver);
+    }
+
+    public ConfirmationPage submitOrder1(){
+        clickWebElements(placeOrder);
+        System.out.println("changes done");
+        return new ConfirmationPage(driver);
+
     }
 }

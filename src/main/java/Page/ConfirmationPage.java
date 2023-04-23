@@ -14,6 +14,7 @@ import org.openqa.selenium.support.PageFactory;
             super(driver);
             this.driver=driver;
             PageFactory.initElements(driver,this);
+            System.out.println("done change");
 
         }
         @FindBy(css=".hero-primary")
