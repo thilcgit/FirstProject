@@ -26,6 +26,9 @@ public class LandingPage extends AbstractComponents {
 
     @FindBy(css ="[class*='flyInOut']")
     WebElement errorMessage;
+    WebElement errorMessage2;
+    WebElement errorMessage3;
+    WebElement errorMessage4;
 
 
     public ProductCatelogPage loginApplication(String userEmail, String pwd){
